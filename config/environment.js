@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'envelope-ui',
+    podModulePrefix: 'envelope-ui/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
@@ -20,6 +21,17 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    }
+  };
+
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: 'login',
+    auth0: {
+      clientID: process.env.AUTH0_CLIENT_ID,
+      domain: process.env.AUTH0_DOMAIN,
+      logoutReturnToURL: '/',
+      audience: 'j6RBJ58oVOkVzehkKoFepfiepRbYAyrv',
+      enableImpersonation: false,
     }
   };
 
